@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  web:
+    container_name: odoo18
+    build: .
+    image: 072726364414.dkr.ecr.sa-east-1.amazonaws.com/odoo/demo-website:latest
+    user: odoo
+    ports:
+      - "80:8069"
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo:ro
+      - ./custom_addons:/opt/odoo/custom_addons
+    environment:
+      - DB_PORT_5432_TCP_ADDR=${DB_HOST}
+      - DB_PORT_5432_TCP_PORT=${DB_PORT}
+      - DB_ENV_POSTGRES_USER=${DB_USER}
+      - DB_ENV_POSTGRES_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+    command: -- --database ${DB_NAME}
+    networks:
+      - default
+    restart: always
+
+volumes:
+  odoo-web-data:
+    driver: local

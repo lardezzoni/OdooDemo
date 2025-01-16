@@ -1,0 +1,22 @@
+                                 List of relations
+ Schema |                        Name                         | Type  |   Owner    
+--------+-----------------------------------------------------+-------+------------
+ public | base_document_layout                                | table | odoo_admin
+ public | base_enable_profiling_wizard                        | table | odoo_admin
+ public | base_import_import                                  | table | odoo_admin
+ public | base_import_mapping                                 | table | odoo_admin
+ public | base_import_module                                  | table | odoo_admin
+ public | base_language_export                                | table | odoo_admin
+ public | base_language_import                                | table | odoo_admin
+ public | base_language_install                               | table | odoo_admin
+ public | base_language_install_website_rel                   | table | odoo_admin
+ public | base_module_install_request                         | table | odoo_admin
+ public | base_module_install_review                          | table | odoo_admin
+ public | base_module_uninstall                               | table | odoo_admin
+ public | base_module_update                                  | table | odoo_admin
+ public | base_module_upgrade                                 | table | odoo_admin
+ public | base_partner_merge_automatic_wizard                 | table | odoo_admin
+ public | base_partner_merge_automatic_wizard_res_partner_rel | table | odoo_admin
+ public | base_partner_merge_line                             | table | odoo_admin
+(17 rows)
+
