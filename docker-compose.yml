@@ -9,7 +9,6 @@ services:
       - "80:8069"
     volumes:
       - odoo-web-data:/var/lib/odoo
-      - ./config:/etc/odoo:ro
       - ./custom_addons:/opt/odoo/custom_addons
     environment:
       - DB_PORT_5432_TCP_ADDR=${DB_HOST}
@@ -17,6 +16,10 @@ services:
       - DB_ENV_POSTGRES_USER=${DB_USER}
       - DB_ENV_POSTGRES_PASSWORD=${DB_PASSWORD}
       - DB_NAME=${DB_NAME}
+      - S3_BUCKET=${S3_NAME}
+      - S3_REGION=${S3_REGION}
+      - S3_ACCESS_KEY=${S3_ACCESS_KEY}
+      - S3_SECRET_KEY=${S3_SECRET_KEY}
     command: -- --database ${DB_NAME}
     networks:
       - default
